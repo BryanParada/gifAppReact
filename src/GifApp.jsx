@@ -9,6 +9,9 @@ export const GifApp = () => {
   const onAddCategory = ( newCategory ) =>{
     // console.log(newCategory)
     // categories.push('MI TEXTO') //! <- NO!
+
+    if ( categories.includes(newCategory)) return;
+
      setCategories([ newCategory, ...categories]);
     //categories.push(newCategory);
     //setCategories( cat => [ newCategory, ...cat] );
@@ -27,6 +30,7 @@ export const GifApp = () => {
           <AddCategory 
           // setCategories={setCategories}
           onNewCategory= { valor => onAddCategory(valor)} //valor = event
+          // currentCategories={categories}
           />
 
 
