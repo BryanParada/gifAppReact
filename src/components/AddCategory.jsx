@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 //                            vvv lo que recibimos de las props
-export const AddCategory = ( {setCategories}) => {
+export const AddCategory = ( {onNewCategory}) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -19,8 +19,9 @@ export const AddCategory = ( {setCategories}) => {
         event.preventDefault();
         if( inputValue.trim().lenth <= 1) return;
         console.log(inputValue)
-        setCategories( categories => [ inputValue, ...categories]);
+        // setCategories( categories => [ inputValue, ...categories]);
         setInputValue('');
+        onNewCategory( inputValue.trim() )
         
     }
 
