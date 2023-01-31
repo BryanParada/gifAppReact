@@ -5,6 +5,14 @@ export const GifApp = () => {
 
   const [categories, setCategories] = useState(['one punch', 'dbz'])
 
+  const onAddCategory = () =>{
+
+    // categories.push('MI TEXTO') //! <- NO!
+    // setCategories([  ...categories, 'VALORANT']);
+    setCategories( cat => [ ...cat, 'Valorant'] );
+
+  }
+
   console.log(categories)
 
 
@@ -16,6 +24,7 @@ export const GifApp = () => {
           {/* input */}
 
       {/* listado de gif */}
+      <button onClick={onAddCategory}>Add</button>
     <ol>
      { categories.map( category => {
       return <li key={category}>{category}</li>
